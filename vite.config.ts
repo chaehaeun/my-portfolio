@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
-import path from 'node:path';
-import react from '@vitejs/plugin-react';
-import checker from 'vite-plugin-checker';
+import { defineConfig } from 'vite'
+import * as path from 'node:path'
+import react from '@vitejs/plugin-react'
+import checker from 'vite-plugin-checker'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,10 +10,10 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  plugins: [react()],
+  plugins: [react(), checker({ typescript: true, overlay: true })],
   server: {
     host: 'localhost',
     port: 3000,
     cors: true,
   },
-});
+})
