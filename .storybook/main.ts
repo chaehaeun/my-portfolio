@@ -12,9 +12,22 @@ const config: StorybookConfig = {
       },
     },
   ],
+  typescript: {
+    check: false,
+    // checkOptions: {},
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: prop =>
+        prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
+    },
+  },
   framework: {
     name: '@storybook/react-vite',
     options: {},
+  },
+  core: {
+    disableTelemetry: true,
   },
   docs: {
     autodocs: 'tag',

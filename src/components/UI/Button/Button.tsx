@@ -9,7 +9,7 @@ export interface ButtonProps {
 }
 
 const BASE_BUTTON_CLASSES =
-  'max-w-[190px] w-full py-2 text-[32px] font-semibold text-white bg-dayPoint font-solano border-2 border-black shadow-wrap transition-colors hover:bg-dayPointHover dark:bg-nightPoint dark:border-white dark:shadow-wrapDark dark:hover:bg-nightPointHover dark:text-black block'
+  'max-w-[190px] w-full py-2 text-title font-semibold text-white bg-dayPoint font-solano border-2 border-black shadow-wrap transition-colors hover:bg-dayPointHover dark:bg-nightPoint dark:border-white dark:shadow-wrapDark dark:hover:bg-nightPointHover dark:text-black block'
 
 const Button: React.FC<ButtonProps> = ({ label, onClick, align = 'left' }) => {
   return (

@@ -39,6 +39,9 @@ export default {
         wrap: '4px 4px #000',
         wrapDark: '4px 4px #fff',
       },
+      fontSize: {
+        title: '2rem',
+      },
     },
   },
   plugins: [],
