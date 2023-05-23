@@ -8,7 +8,7 @@ interface TitleProps {
 const Title: React.FC<TitleProps> = ({ sectionName, about }) => {
   return (
     <h2
-      className={`relative font-semibold text-title font-solano text-dayPoint dark:text-nightPoint after:block after:contents-[''] after:absolute after:bg-black dark:after:bg-white after:w-full after:h-[1px] after:top-1/2 after:-translate-y-1/2 md:after:w-64 after:z-0 ${
+      className={`relative font-semibold text-2xl transition-all md:text-title font-solano text-dayPoint dark:text-nightPoint after:block after:contents-[''] after:absolute after:bg-black dark:after:bg-white after:w-full after:h-[1px] after:top-1/2 after:-translate-y-1/2 md:after:w-64 after:z-0 ${
         about ? 'mb-4' : 'mb-9'
       }`}
     >
