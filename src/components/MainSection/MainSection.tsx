@@ -1,10 +1,16 @@
-// import React from 'react'
+import React, { forwardRef } from 'react'
+import Button from '@/components/UI/Button/Button'
 
-import Button from '../UI/Button/Button'
+interface MainSectionProps {
+  ref?: React.Ref<HTMLDivElement>
+}
 
-const MainSection = () => {
+const MainSection: React.FC<MainSectionProps> = forwardRef((_props, ref) => {
   return (
-    <main className="flex flex-col justify-center w-full h-screen px-4 mx-auto min-h-[500px] max-w-7xl md:px-28">
+    <main
+      ref={ref}
+      className="flex flex-col justify-center w-full h-screen px-4 mx-auto min-h-[500px] max-w-7xl md:px-28"
+    >
       <p className="font-semibold sm:text-3xl text-dayPoint dark:text-nightPoint font-solano">
         Hi there :D
       </p>
@@ -24,6 +30,6 @@ const MainSection = () => {
       <Button label="RESUME" align="left" />
     </main>
   )
-}
+})
 
 export default MainSection
