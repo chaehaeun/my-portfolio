@@ -46,8 +46,8 @@ const Header = () => {
           }`}
         ></span>
         <span
-          className={`absolute left-0 bottom-0  w-full h-1 transition-all duration-500 rounded-sm bg-dayPoint dark:bg-nightPoint ${
-            toggleMenu ? '-rotate-45' : ''
+          className={`absolute left-0 bottom-0 w-full h-1 transition-all duration-500 rounded-sm bg-dayPoint dark:bg-nightPoint ${
+            toggleMenu ? '-translate-y-4 rotate-45' : ''
           }}`}
         ></span>
         <span className="sr-only">메뉴열기</span>
