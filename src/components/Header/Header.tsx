@@ -28,22 +28,38 @@ const Header: React.FC<HeaderProps> = ({ clickHandler }) => {
       >
         <ul className="absolute items-center gap-5 space-y-2 text-3xl font-semibold text-center text-black -translate-x-1/2 -translate-y-1/2 sm:text-2xl sm:flex sm:space-y-0 font-solano left-1/2 top-1/2 dark:text-nightContent sm:static sm:translate-x-0 sm:translate-y-0">
           <li className="">
-            <button type="button" onClick={clickHandler.scrollToMain}>
+            <button
+              className="transition-colors dark:hover:text-nightPoint hover:text-dayPoint"
+              type="button"
+              onClick={clickHandler.scrollToMain}
+            >
               Main
             </button>
           </li>
           <li>
-            <button type="button" onClick={clickHandler.scrollToAbout}>
+            <button
+              className="transition-colors dark:hover:text-nightPoint hover:text-dayPoint"
+              type="button"
+              onClick={clickHandler.scrollToAbout}
+            >
               About
             </button>
           </li>
           <li>
-            <button type="button" onClick={clickHandler.scrollToProject}>
+            <button
+              className="transition-colors dark:hover:text-nightPoint hover:text-dayPoint"
+              type="button"
+              onClick={clickHandler.scrollToProject}
+            >
               Projects
             </button>
           </li>
           <li>
-            <button type="button" onClick={clickHandler.scrollToContact}>
+            <button
+              className="transition-colors dark:hover:text-nightPoint hover:text-dayPoint"
+              type="button"
+              onClick={clickHandler.scrollToContact}
+            >
               Contact
             </button>
           </li>
@@ -55,13 +71,14 @@ const Header: React.FC<HeaderProps> = ({ clickHandler }) => {
       <button
         type="button"
         className="relative z-50 h-8 w-9 sm:hidden"
+        aria-label="메뉴 열기"
         onClick={() => {
           setToggleMenu(prev => !prev)
         }}
       >
         <span
           className={`absolute top-0 left-0 w-full h-1 transition-all duration-500 rounded-sm bg-dayPoint dark:bg-nightPoint ${
-            toggleMenu ? 'rotate-45 translate-y-4' : ''
+            toggleMenu ? 'rotate-45 translate-y-[13.5px]' : ''
           }`}
         ></span>
         <span
@@ -71,10 +88,9 @@ const Header: React.FC<HeaderProps> = ({ clickHandler }) => {
         ></span>
         <span
           className={`absolute left-0 bottom-0 w-full h-1 transition-all duration-500 rounded-sm bg-dayPoint dark:bg-nightPoint ${
-            toggleMenu ? '-translate-y-4 rotate-45' : ''
+            toggleMenu ? '-rotate-45 -translate-y-[14.5px] ' : ''
           }}`}
         ></span>
-        <span className="sr-only">메뉴열기</span>
       </button>
     </header>
   )
