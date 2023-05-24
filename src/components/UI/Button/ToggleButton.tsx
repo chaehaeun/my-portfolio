@@ -18,6 +18,9 @@ const ToggleButton = () => {
   useEffect(() => {
     if (localStorage.getItem('theme') === 'dark') {
       document.documentElement.classList.add('dark')
+      setToggle('Dark')
+    } else {
+      setToggle('Light')
     }
   }, [])
 
