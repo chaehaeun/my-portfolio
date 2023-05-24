@@ -1,4 +1,5 @@
 import ProjectArticle from '@/components/UI/Project/ProjectArticle'
+import Button from '../Button/Button'
 
 const DUMMY = {
   projects: '프로젝트 제목',
@@ -36,10 +37,13 @@ const DUMMY_2 = {
 
 const Project = () => {
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-      <ProjectArticle data={DUMMY} />
-      <ProjectArticle data={DUMMY_2} />
-    </div>
+    <>
+      <div className="grid grid-cols-1 gap-4 gap-y-7 md:grid-cols-2">
+        <ProjectArticle data={DUMMY} />
+        <ProjectArticle data={DUMMY_2} />
+      </div>
+      <Button label="Show More" align="center" />
+    </>
   )
 }
 

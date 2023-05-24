@@ -1,0 +1,29 @@
+// import React from 'react'
+
+import Button from '../UI/Button/Button'
+
+const MainSection = () => {
+  return (
+    <main className="flex flex-col justify-center w-full h-screen px-4 mx-auto min-h-[500px] max-w-7xl md:px-28">
+      <p className="font-semibold sm:text-3xl text-dayPoint dark:text-nightPoint font-solano">
+        Hi there :D
+      </p>
+      <p className="inline-block my-4 text-3xl font-semibold font-solano sm:text-7xl">
+        <span className="block">
+          STICK TO THE{' '}
+          <span className="text-dayPoint dark:text-nightPoint">BASICS</span>
+        </span>
+        <span className="inline-block ">Chae Haeun’s Portfolio.</span>
+      </p>
+      <p className="text-sm leading-relaxed">
+        사람은 청춘의 같이, 이상은 거선의 생명을 없는 봄바람이다. 피가 위하여
+        천고에 내는 불어 같은 충분히 커다란 행복스럽고 그리하였는가? 용기가
+        풍부하게 청춘을 열락의 말이다. 소금이라 피에 보배를 얼마나 그들에게
+        일월과 않는 장식하는 사막이다. 웅대한 실현에 생생하며, 약동하다.
+      </p>
+      <Button label="RESUME" align="left" />
+    </main>
+  )
+}
+
+export default MainSection

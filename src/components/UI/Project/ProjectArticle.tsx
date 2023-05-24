@@ -19,7 +19,7 @@ interface ProjectProps {
 
 const ProjectArticle: React.FC<ProjectProps> = ({ data }) => {
   return (
-    <article className="flex flex-col border-2 border-black shadow-wrap dark:border-white dark:shadow-wrapDark dark:bg-slate-800">
+    <article className="flex flex-col mx-auto border-2 border-black sm:w-5/6 md:w-full shadow-wrap dark:border-white dark:shadow-wrapDark dark:bg-slate-800">
       <div>
         <img
           className="object-cover w-full h-64 border-b-2 border-black dark:border-white"

@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-    <footer className="py-4 text-center">
+    <footer className="p-4 text-center">
       <div className="top-0 pointer-events-none md:-translate-x-1/2 md:fixed md:left-1/2 md:max-w-7xl md:w-full md:h-full">
-        <ul className="pointer-events-auto px-4 xl:px-0 flex justify-center gap-2 after:hidden  md:fixed md:left-0 md:bottom-0 md:flex-col md:gap-3 after:content-[''] md:after:block after:w-[1px] after:h-52 after:bg-dayContent dark:after:bg-nightContent md:items-center">
+        <ul className="pointer-events-auto px-4 xl:px-0 flex justify-center gap-2 after:hidden  md:fixed md:left-0 md:bottom-0 md:flex-col md:gap-3 after:content-[''] md:after:block after:w-[1px] after:h-40 after:bg-dayContent dark:after:bg-nightContent md:items-center">
           <li>
             <a target="_blank" href="">
               <svg

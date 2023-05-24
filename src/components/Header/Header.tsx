@@ -5,10 +5,11 @@ const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
 
   return (
-    <header className="flex items-center w-full p-4 mx-auto xl:px-0 max-w-7xl">
+    <header className="fixed top-0 left-0 z-40 flex items-center w-full p-4 mx-auto xl:px-0 max-w-7xl md:left-1/2 md:-translate-x-1/2">
+      <div></div>
       <h1 className="text-3xl font-bold font-solano grow">Chae Haeun</h1>
-      <div
-        className={`fixed left-0 top-0 z-50 w-full h-full sm:w-auto sm:bg-transparent sm:dark:bg-transparent sm:h-auto bg-white/75 dark:bg-black/75 sm:translate-y-0 sm:static ${
+      <nav
+        className={`fixed left-0 top-0 z-50 w-full h-full sm:w-auto sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none sm:dark:bg-transparent sm:h-auto bg-white/75 dark:bg-black/75 sm:translate-y-0 sm:static ${
           toggleMenu ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
@@ -27,7 +28,7 @@ const Header = () => {
             <ToggleButton />
           </li>
         </ul>
-      </div>
+      </nav>
       <button
         type="button"
         className="relative z-50 h-8 w-9 sm:hidden"
