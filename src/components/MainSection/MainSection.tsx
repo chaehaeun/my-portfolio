@@ -19,7 +19,7 @@ const MainSection: React.FC<MainSectionProps> = forwardRef((_props, ref) => {
         sequence={[`STICK TO THE BASICS\nChae Haeun’s Portfolio.`]}
         cursor={true}
         speed={30}
-        className="block h-24 text-3xl font-semibold whitespace-pre-line transition-all font-solano sm:text-7xl type sm:h-40"
+        className="block h-24 text-3xl font-semibold whitespace-pre-line transition-all font-solano sm:text-7xl type sm:h-40 selection:text-nightContent selection:bg-dayPoint"
       />
       <p className="text-sm leading-relaxed">
         사람은 청춘의 같이, 이상은 거선의 생명을 없는 봄바람이다. 피가 위하여

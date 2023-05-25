@@ -8,7 +8,7 @@ const List: React.FC<ListProps> = ({ data }) => {
   return (
     <ul>
       <li>
-        <p className="flex items-center justify-between text-sm md:text-base ">
+        <p className="flex items-center justify-between text-sm md:text-base">
           <span className="text-lg font-bold md:text-xl dark:text-nightContent">
             {data}
           </span>

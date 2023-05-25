@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply bg-dayBackground dark:bg-nightBackground text-dayContent dark:text-nightContent;
+    @apply bg-dayBackground dark:bg-nightBackground text-dayContent dark:text-nightContent selection:text-nightContent dark:selection:text-dayContent selection:bg-dayPoint dark:selection:bg-nightPointHover;
   }
 }
 

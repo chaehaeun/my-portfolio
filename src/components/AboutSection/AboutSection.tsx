@@ -52,12 +52,12 @@ const AboutSection: React.FC<AboutSectionProps> = forwardRef((_props, ref) => {
             <List data={'에네이'} />
           </li>
           <li>
-            <Title sectionName="Education" about={true} />
-            <List data={'연세대 미래캠퍼스'} />
-          </li>
-          <li>
             <Title sectionName="License" about={true} />
             <List data={'컴퓨터 그래픽스 운용기사 자격증'} />
+          </li>
+          <li>
+            <Title sectionName="Education" about={true} />
+            <List data={'연세대 미래캠퍼스'} />
           </li>
           <li>
             <Title sectionName="Skills" about={true} />
