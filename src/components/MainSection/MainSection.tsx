@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react'
 import Button from '@/components/UI/Button/Button'
+import { TypeAnimation } from 'react-type-animation'
 
 interface MainSectionProps {
   ref?: React.Ref<HTMLDivElement>
@@ -14,13 +15,12 @@ const MainSection: React.FC<MainSectionProps> = forwardRef((_props, ref) => {
       <p className="font-semibold sm:text-3xl text-dayPoint dark:text-nightPoint font-solano">
         Hi there :D
       </p>
-      <p className="inline-block my-4 text-3xl font-semibold font-solano sm:text-7xl">
-        <span className="block">
-          STICK TO THE{' '}
-          <span className="text-dayPoint dark:text-nightPoint">BASICS</span>
-        </span>
-        <span className="inline-block ">Chae Haeun’s Portfolio.</span>
-      </p>
+      <TypeAnimation
+        sequence={[`STICK TO THE BASICS\nChae Haeun’s Portfolio.`]}
+        cursor={true}
+        speed={30}
+        className="block h-24 text-3xl font-semibold whitespace-pre-line transition-all font-solano sm:text-7xl type sm:h-40"
+      />
       <p className="text-sm leading-relaxed">
         사람은 청춘의 같이, 이상은 거선의 생명을 없는 봄바람이다. 피가 위하여
         천고에 내는 불어 같은 충분히 커다란 행복스럽고 그리하였는가? 용기가

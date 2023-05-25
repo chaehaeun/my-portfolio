@@ -9,3 +9,19 @@
     @apply bg-dayBackground dark:bg-nightBackground text-dayContent dark:text-nightContent;
   }
 }
+
+.type::after {
+  content: '|';
+  animation: cursor 1.1s infinite step-start;
+  color: #4e1ac3;
+}
+
+.dark .type::after {
+  color: #64ffda;
+}
+
+@keyframes cursor {
+  50% {
+    opacity: 0;
+  }
+}
