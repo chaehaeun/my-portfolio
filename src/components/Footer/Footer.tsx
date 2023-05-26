@@ -4,7 +4,11 @@ const Footer = () => {
       <div className="top-0 pointer-events-none md:-translate-x-1/2 md:fixed md:left-1/2 md:max-w-7xl md:w-full md:h-full">
         <ul className="pointer-events-auto px-4 xl:px-0 flex justify-center gap-2 after:hidden  md:fixed md:left-0 md:bottom-0 md:flex-col md:gap-3 after:content-[''] md:after:block after:w-[1px] after:h-40 after:bg-dayContent dark:after:bg-nightContent md:items-center">
           <li>
-            <a target="_blank" href="">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/chaehaeun"
+            >
               <svg
                 className="w-6 h-6"
                 viewBox="0 0 32 32"
@@ -20,15 +24,19 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a target="_blank" href="">
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://velog.io/@chaehe_3210"
+            >
               <svg
                 className="w-6 h-6"
                 viewBox="0 0 24 24"
-                aria-label="twitter"
+                aria-label="velog"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g clip-path="url(#clip0_128_26)">
+                <g clipPath="url(#clip0_128_26)">
                   <path
                     className=" fill-gray-500 dark:fill-nightContent"
                     d="M3 0C1.338 0 0 1.338 0 3V21C0 22.662 1.338 24 3 24H21C22.662 24 24 22.662 24 21V3C24 1.338 22.662 0 21 0H3ZM9.883 6.25C10.513 6.25 10.888 6.55 11.008 7.15L12.471 15.453C12.936 14.838 13.317 14.32 13.617 13.9C14.082 13.24 14.51 12.482 14.9 11.627C15.305 10.772 15.508 10.007 15.508 9.332C15.508 8.927 15.395 8.605 15.17 8.365C14.96 8.11 14.562 7.788 13.977 7.398C14.577 6.633 15.327 6.25 16.227 6.25C16.707 6.25 17.105 6.393 17.42 6.678C17.75 6.963 17.914 7.382 17.914 7.938C17.914 8.868 17.524 10.031 16.744 11.426C15.979 12.806 14.503 14.883 12.313 17.658L10.086 17.814L8.375 8.186H6.125V7.24C6.725 7.045 7.43 6.834 8.24 6.61C9.05 6.37 9.598 6.25 9.883 6.25Z"
@@ -42,7 +50,7 @@ const Footer = () => {
               </svg>
             </a>
           </li>
-          <li>
+          {/* <li>
             <a target="_blank" href="">
               <svg
                 className="w-6 h-6"
@@ -57,9 +65,9 @@ const Footer = () => {
                 />
               </svg>
             </a>
-          </li>
+          </li> */}
           <li>
-            <a target="_blank" href="">
+            <a rel="noopener noreferrer" target="_blank" href="">
               <svg
                 className="w-6 h-6"
                 viewBox="0 0 20 20"

@@ -29,7 +29,7 @@ const ToggleButton = () => {
       <input
         type="checkbox"
         className="w-0 h-0 opacity-0 peer"
-        checked={toggle === 'Dark' ? true : false}
+        defaultChecked={toggle === 'Dark' ? true : false}
       />
       <span
         onClick={toggleDarkMode}

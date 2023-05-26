@@ -1,15 +1,37 @@
-// import React from 'react'
 import Container from '@/components/UI/Container/Container'
 import Title from '@/components/UI/Title/Title'
 import profileIMG from '@/assets/profile.png'
 import List from '@/components/UI/List/List'
-import { forwardRef } from 'react'
+import { forwardRef, useEffect, useState } from 'react'
+import { dbService } from '@/firebase-config'
+import { collection, getDocs, query } from 'firebase/firestore'
 
 interface AboutSectionProps {
   ref?: React.Ref<HTMLDivElement>
 }
 
 const AboutSection: React.FC<AboutSectionProps> = forwardRef((_props, ref) => {
+  const [aboutData, setAboutData] = useState<any>([])
+
+  const getData = async () => {
+    try {
+      const aboutQuery = query(collection(dbService, 'about'))
+
+      const querySnapshot = await getDocs(aboutQuery)
+      const dataQuery = querySnapshot.docs.map(doc => doc.data())
+
+      setAboutData(dataQuery)
+    } catch (error) {
+      console.error('에러에러에러')
+    }
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  console.log(aboutData)
+
   return (
     <div ref={ref}>
       <Container>
@@ -49,19 +71,19 @@ const AboutSection: React.FC<AboutSectionProps> = forwardRef((_props, ref) => {
         <ul className="grid grid-cols-1 mt-10 gap-y-10 lg:gap-5 lg:grid-cols-2 lg:gap-y-14">
           <li>
             <Title sectionName="Experience" about={true} />
-            <List data={'에네이'} />
+            <List data={aboutData[1]} objName={'experience'} />
           </li>
           <li>
             <Title sectionName="License" about={true} />
-            <List data={'컴퓨터 그래픽스 운용기사 자격증'} />
+            <List data={aboutData[2]} objName={'license'} />
           </li>
           <li>
             <Title sectionName="Education" about={true} />
-            <List data={'연세대 미래캠퍼스'} />
+            <List data={aboutData[0]} objName={'edu'} />
           </li>
           <li>
             <Title sectionName="Skills" about={true} />
-            <List data={'에네이'} />
+            <List data={aboutData[3]} objName={'stack'} />
           </li>
         </ul>
       </Container>
