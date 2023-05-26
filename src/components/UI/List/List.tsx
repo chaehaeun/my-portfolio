@@ -19,14 +19,19 @@ const List: React.FC<ListProps> = ({ data, objName }) => {
       {listData
         .map((list: any) => (
           <li key={`${objName}${list.id}`}>
-            <p className="flex items-center justify-between text-sm md:text-base">
-              <span className="text-lg font-bold md:text-xl dark:text-nightContent">
-                {list.name}
-              </span>
-              <span className="shrink-0">{list.date}</span>
-            </p>
+            {list.name === null ? (
+              <img src={list.tag} alt={list.stackName} />
+            ) : (
+              <p className="flex items-center justify-between text-sm md:text-base">
+                <span className="text-lg font-bold md:text-xl dark:text-nightContent">
+                  {list.name}
+                </span>
+                <span className="shrink-0">{list.date}</span>
+              </p>
+            )}
+
             <ul className="pt-3 space-y-2">
-              {list?.detail.map((text: any, index: number) => (
+              {list?.detail.map((text: string, index: number) => (
                 <li
                   key={`detail${index}`}
                   className="text-sm md:text-base before:block before:mr-3 before:mt-2 before:contents-[''] before:w-1 before:rounded-full before:h-1 dark:before:bg-nightContent before:shrink-0 before:bg-dayContent flex"
