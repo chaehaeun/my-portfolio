@@ -20,7 +20,7 @@ interface ProjectProps {
 
 const ProjectArticle: React.FC<ProjectProps> = ({ data }) => {
   return (
-    <article className="flex flex-col mx-auto transition-transform border-2 border-black sm:w-5/6 md:w-full shadow-wrap dark:border-white dark:shadow-wrapDark dark:bg-slate-800 hover:scale-[1.01]">
+    <article className="flex flex-col mx-auto transition-transform border-2 border-black sm:max-w-[85%] w-full md:max-w-full shadow-wrap dark:border-white dark:shadow-wrapDark dark:bg-slate-800 hover:scale-[1.01]">
       <div>
         <a target="_blank" href={data.deploy || data.github || data.notion}>
           <img
