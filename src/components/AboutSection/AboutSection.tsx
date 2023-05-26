@@ -30,8 +30,6 @@ const AboutSection: React.FC<AboutSectionProps> = forwardRef((_props, ref) => {
     getData()
   }, [])
 
-  console.log(aboutData)
-
   return (
     <div ref={ref}>
       <Container>
@@ -77,11 +75,11 @@ const AboutSection: React.FC<AboutSectionProps> = forwardRef((_props, ref) => {
             <Title sectionName="License" about={true} />
             <List data={aboutData[2]} objName={'license'} />
           </li>
-          <li>
+          <li className="lg:col-span-2">
             <Title sectionName="Education" about={true} />
             <List data={aboutData[0]} objName={'edu'} />
           </li>
-          <li>
+          <li className="lg:col-span-2">
             <Title sectionName="Skills" about={true} />
             <List data={aboutData[3]} objName={'stack'} />
           </li>

@@ -6,19 +6,13 @@ interface ListProps {
 }
 
 const List: React.FC<ListProps> = ({ data, objName }) => {
-  // console.log(data[objName])
-  // console.log(typeof data, objName)
-
   const [listData, setListData] = useState<any>([])
 
   useEffect(() => {
     if (data) {
-      // console.log(data[objName])
       setListData(data[objName])
     }
   }, [data])
-
-  console.log(listData[0]?.detail)
 
   return (
     <ul className="space-y-5 ">
@@ -35,7 +29,7 @@ const List: React.FC<ListProps> = ({ data, objName }) => {
               {list?.detail.map((text: any, index: number) => (
                 <li
                   key={`detail${index}`}
-                  className="text-sm md:text-base before:block before:mr-3 before:mt-2 before:contents-[''] before:w-1 before:rounded-full before:h-1 dark:before:bg-nightContent before:bg-dayContent flex"
+                  className="text-sm md:text-base before:block before:mr-3 before:mt-2 before:contents-[''] before:w-1 before:rounded-full before:h-1 dark:before:bg-nightContent before:shrink-0 before:bg-dayContent flex"
                 >
                   {text}
                 </li>
