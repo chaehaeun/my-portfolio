@@ -11,6 +11,7 @@ type DataType = {
   github?: string
   notion?: string
   imgURL: string
+  deploy?: string
 }
 
 interface ProjectProps {
@@ -19,13 +20,15 @@ interface ProjectProps {
 
 const ProjectArticle: React.FC<ProjectProps> = ({ data }) => {
   return (
-    <article className="flex flex-col mx-auto border-2 border-black sm:w-5/6 md:w-full shadow-wrap dark:border-white dark:shadow-wrapDark dark:bg-slate-800">
+    <article className="flex flex-col mx-auto transition-transform border-2 border-black sm:w-5/6 md:w-full shadow-wrap dark:border-white dark:shadow-wrapDark dark:bg-slate-800 hover:scale-[1.01]">
       <div>
-        <img
-          className="object-cover w-full h-64 border-b-2 border-black dark:border-white"
-          src={data.imgURL}
-          alt={`${data.projects} 썸네일`}
-        />
+        <a target="_blank" href={data.deploy || data.github || data.notion}>
+          <img
+            className="object-cover w-full h-64 border-b-2 border-black dark:border-white"
+            src={data.imgURL}
+            alt={`${data.projects} 썸네일`}
+          />
+        </a>
       </div>
       <div className="flex items-center justify-between px-5 mt-4 mb-3">
         <div>
@@ -33,17 +36,34 @@ const ProjectArticle: React.FC<ProjectProps> = ({ data }) => {
           <span className="font-medium ">{data.date}</span>
         </div>
         <div className="flex gap-3">
+          {data.deploy && (
+            <a target="_blank" href={data.deploy}>
+              <svg
+                className="w-6 h-6 group"
+                viewBox="0 0 69 69"
+                aria-label="배포 링크로 바로가기"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  className="dark:fill-white group-hover:fill-dayPoint dark:group-hover:fill-nightPoint"
+                  d="M2.91898 0.0173857C2.03226 0.315467 1.26749 0.895596 0.741458 1.66917C0.215429 2.44274 -0.0429351 3.36723 0.00582613 4.30144V64.2781C0.00582613 65.4143 0.45718 66.504 1.2606 67.3074C2.06401 68.1108 3.15368 68.5622 4.28988 68.5622H64.2666C65.4028 68.5622 66.4924 68.1108 67.2959 67.3074C68.0993 66.504 68.5506 65.4143 68.5506 64.2781V4.30144C68.5506 3.16524 68.0993 2.07557 67.2959 1.27216C66.4924 0.46874 65.4028 0.0173857 64.2666 0.0173857L4.28988 0.0173857C4.03336 -0.00579523 3.77527 -0.00579523 3.51875 0.0173857C3.34754 0.00709469 3.17587 0.00709469 3.00466 0.0173857L2.91898 0.0173857ZM12.858 8.58549C15.257 8.58549 17.142 10.4705 17.142 12.8695C17.142 15.2686 15.257 17.1536 12.858 17.1536C10.4589 17.1536 8.57393 15.2686 8.57393 12.8695C8.57393 10.4705 10.4589 8.58549 12.858 8.58549ZM29.9942 8.58549H55.6985C58.0976 8.58549 59.9825 10.4705 59.9825 12.8695C59.9825 15.2686 58.0976 17.1536 55.6985 17.1536H29.9942C27.5951 17.1536 25.7101 15.2686 25.7101 12.8695C25.7101 10.4705 27.5951 8.58549 29.9942 8.58549ZM8.57393 25.7217H59.9825V59.9941H8.57393V25.7217Z"
+                  fill="black"
+                />
+              </svg>
+            </a>
+          )}
           {data.github && (
             <a target="_blank" href={data.github}>
               <svg
-                className="w-6 h-6 "
+                className="w-6 h-6 group"
                 viewBox="0 0 365 357"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
+                aria-label="Github 페이지로 바로가기"
               >
                 <path
-                  className="dark:fill-white"
+                  className="dark:fill-white group-hover:fill-dayPoint dark:group-hover:fill-nightPoint"
                   fillRule="evenodd"
                   clipRule="evenodd"
                   d="M182.5 0C81.7 0 0 81.7 0 182.5C0 263.1 52.3 331.5 124.8 355.7C133.9 357.4 137.3 351.7 137.3 346.9C137.3 342.5 137.1 328.2 137.1 312.9C86.3 323.9 75.6 291.4 75.6 291.4C67.3 270.3 55.3 264.7 55.3 264.7C38.7 253.4 56.5 253.6 56.5 253.6C74.8 254.9 84.5 272.4 84.5 272.4C100.8 300.3 127.2 292.2 137.6 287.6C139.2 275.8 144 267.8 149.2 263.2C108.7 258.6 66 242.9 66 173C66 153.1 73.1 136.8 84.8 124C82.9 119.4 76.7 100.8 86.6 75.7C86.6 75.7 101.9 70.8 136.8 94.4C151.4 90.4 167 88.3 182.5 88.3C198 88.4 213.6 90.4 228.2 94.4C263 70.8 278.3 75.7 278.3 75.7C288.2 100.8 282 119.4 280.1 124C291.8 136.8 298.9 153.1 298.9 173C298.9 243.1 256.2 258.5 215.6 263C222.1 268.7 228 279.8 228 296.8C228 321.2 227.8 340.9 227.8 346.9C227.8 351.8 231.1 357.4 240.3 355.7C312.8 331.5 365 263.2 365 182.5C365 81.7 283.3 0 182.5 0Z"
@@ -78,22 +98,19 @@ const ProjectArticle: React.FC<ProjectProps> = ({ data }) => {
                   fill="#181616"
                 />
               </svg>
-
-              <span className="sr-only">Github 페이지로 바로가기</span>
             </a>
           )}
           {data.notion && (
             <a target="_blank" href={data.notion}>
-              <span className="sr-only">노션 페이지로 바로가기</span>
               <svg
-                aria-hidden="true"
+                aria-label="노션 페이지로 바로가기"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6"
+                className="w-6 h-6 group"
               >
                 <title>Notion</title>
                 <path
-                  className="dark:fill-white"
+                  className="dark:fill-white group-hover:fill-dayPoint dark:group-hover:fill-nightPoint"
                   d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"
                 />
               </svg>

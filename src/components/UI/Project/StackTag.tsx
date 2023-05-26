@@ -1,6 +1,19 @@
 import React from 'react'
 
-type Stack = 'HTML5' | 'CSS3' | 'TypeScript' | 'React' | 'Tailwind CSS' | string
+type Stack =
+  | 'HTML5'
+  | 'CSS3'
+  | 'Typescript'
+  | 'React'
+  | 'Tailwind CSS'
+  | 'React-Router'
+  | 'Firebase'
+  | 'Redux-Toolkit'
+  | 'Storybook'
+  | 'Vite'
+  | 'Figma'
+  | 'Next.js'
+  | string
 
 interface StackProps {
   stack: Stack
@@ -11,12 +24,25 @@ const StackTag: React.FC<StackProps> = ({ stack }) => {
     HTML5:
       'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white',
     CSS3: 'https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white',
-    TypeScript:
+    Typescript:
       'https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white',
     React:
       'https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white',
     'Tailwind CSS':
       'https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white',
+    'React-Router':
+      'https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=react-router&logoColor=white',
+    Firebase:
+      'https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=white',
+    'Redux-Toolkit':
+      'https://img.shields.io/badge/Redux_Toolkit-764ABC?style=flat-square&logo=redux&logoColor=white',
+    Storybook:
+      'https://img.shields.io/badge/Storybook-FF4785?style=flat-square&logo=storybook&logoColor=white',
+    Vite: 'https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white',
+    Figma:
+      'https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white',
+    'Next.js':
+      'https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white',
   }
 
   return <img src={STACKS[stack]} alt={stack} />
