@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import ProjectArticle from '@/components/UI/Project/ProjectArticle'
-import Button from '@/components/UI/Button/Button'
+// import Button from '@/components/UI/Button/Button'
 import { dbService } from '@/firebase-config'
 import { DocumentData, collection, getDocs, query } from 'firebase/firestore'
 
@@ -43,7 +43,7 @@ const Project = () => {
           <ProjectArticle key={index} data={data} />
         ))}
       </div>
-      <Button label="더 보기" align="center" />
+      {/* <Button label="Show More" align="center" /> */}
     </>
   )
 }

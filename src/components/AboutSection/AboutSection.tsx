@@ -5,6 +5,7 @@ import List from '@/components/UI/List/List'
 import { forwardRef, useEffect, useState } from 'react'
 import { dbService } from '@/firebase-config'
 import { DocumentData, collection, getDocs, query } from 'firebase/firestore'
+import { TypeAnimation } from 'react-type-animation'
 
 interface AboutSectionProps {
   ref?: React.Ref<HTMLDivElement>
@@ -54,26 +55,51 @@ const AboutSection: React.FC<AboutSectionProps> = forwardRef((_props, ref) => {
             <h3 className="my-3 text-3xl font-semibold lg:text-6xl md:mt-0 lg:mb-6 font-solano text-dayPoint dark:text-nightPoint">
               STICK TO THE BASICS
             </h3>
-            <p className="mb-3 font-semibold lg:text-2xl lg:mb-6">
-              ‘기본에 충실한 어쩌구저쩌구’
+            <p className="mb-3 ml-1 font-semibold lg:mb-6 lg:text-xl">
+              <span>저는 </span>
+              <TypeAnimation
+                sequence={[
+                  '새로운 것을 익히는 것을 좋아하는',
+                  1000,
+                  '웹 접근성을 준수하는',
+                  1000,
+                  '재사용하기 쉬운 코드를 짜기 위해 노력하는',
+                  1000,
+                  '묵묵히 맡은 바에 책임을 다하는',
+                  1000,
+                  '끊임없이 고민하고 개선하는',
+                  1000,
+                ]}
+                speed={50}
+                className="font-semibold lg:text-xl"
+                repeat={Infinity}
+              />{' '}
+              <span>사람입니다.</span>
             </p>
-            <p className="text-sm ">
-              <span className="block mb-3">
-                속에 대고, 찾아 오아이스도 힘차게 구하지 트고, 황금시대다. 끓는
-                것은 이성은 아니한 그들의 그들은 풀이 것은 같으며, 이것이다.
-                위하여 풍부하게 눈이 것이다. 구하지 피가 노년에게서 할지니, 것이
-                행복스럽고 인생을 것이다. 것이다.보라, 설산에서 못할 때까지
-                일월과 있으랴? 위하여, 곧 쓸쓸한 주는 못할 길지 가슴에 이상의
-                없는 교향악이다.
-              </span>
-              <span>
-                우리 이상을 용감하고 끓는 이는 피어나기 있으며, 위하여 위하여
-                말이다. 유소년에게서 따뜻한 풀이 원질이 인생에 찾아다녀도,
-                것이다. 밥을 물방아 얼음 광야에서 어디 이것이다. 청춘의 뜨고,
-                힘차게 없으면, 피다. 관현악이며, 반짝이는 속에 주며, 꾸며 예가
-                설레는 있다. 못할 오아이스도 이성은 놀이 발휘하기 품에 것이다.
-              </span>
-            </p>
+
+            <ul className="space-y-2 text-sm">
+              <li className="text-sm md:text-base before:block before:mr-3 before:mt-2 before:contents-[''] before:w-1 before:rounded-full before:h-1 dark:before:bg-nightContent before:shrink-0 before:bg-dayContent flex">
+                새로운 기술이나 툴에 대해 학습하는 것에 두려움이 없으며, 이를
+                작업물에 응용하여 개발 경험을 더욱 풍부하게 만드는 것을
+                즐깁니다.
+              </li>
+              <li className="text-sm md:text-base before:block before:mr-3 before:mt-2 before:contents-[''] before:w-1 before:rounded-full before:h-1 dark:before:bg-nightContent before:shrink-0 before:bg-dayContent flex">
+                다양한 사용자의 환경을 고려하여 웹 접근성을 준수하는 서비스를
+                개발하기 위해 노력합니다.
+              </li>
+              <li className="text-sm md:text-base before:block before:mr-3 before:mt-2 before:contents-[''] before:w-1 before:rounded-full before:h-1 dark:before:bg-nightContent before:shrink-0 before:bg-dayContent flex">
+                효율적이고 누구나 재사용하기 쉬운 코드를 짜기 위해 고심하여
+                컴포넌트를 구성합니다.
+              </li>
+              <li className="text-sm md:text-base before:block before:mr-3 before:mt-2 before:contents-[''] before:w-1 before:rounded-full before:h-1 dark:before:bg-nightContent before:shrink-0 before:bg-dayContent flex">
+                묵묵히 할 일을 하면서도 타인과 원활하게 소통하며 일하는 것에
+                능합니다.
+              </li>
+              <li className="text-sm md:text-base before:block before:mr-3 before:mt-2 before:contents-[''] before:w-1 before:rounded-full before:h-1 dark:before:bg-nightContent before:shrink-0 before:bg-dayContent flex">
+                완성한 코드에서 그치는 것이 아닌 더 나은 디테일을 위해 끊임없이
+                고민합니다.
+              </li>
+            </ul>
           </div>
         </div>
         <ul className="grid grid-cols-1 mt-10 gap-y-10 lg:gap-5 lg:grid-cols-2 lg:gap-y-14">
