@@ -2,7 +2,7 @@ import React from 'react'
 import StackTag from '@/components/UI/Project/StackTag'
 import ProjectTypeTag from './ProjectTypeTag'
 
-type DataType = {
+export interface DataType {
   projects: string
   date: string
   description: string

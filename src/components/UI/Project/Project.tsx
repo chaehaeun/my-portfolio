@@ -2,19 +2,31 @@ import { useEffect, useState } from 'react'
 import ProjectArticle from '@/components/UI/Project/ProjectArticle'
 import Button from '@/components/UI/Button/Button'
 import { dbService } from '@/firebase-config'
-import { collection, getDocs, query } from 'firebase/firestore'
+import { DocumentData, collection, getDocs, query } from 'firebase/firestore'
+
+interface DataType extends DocumentData {
+  projects: string
+  date: string
+  description: string
+  techStack: string[]
+  tag: string[]
+  github?: string
+  notion?: string
+  imgURL: string
+  deploy?: string
+}
 
 const Project = () => {
-  const [aboutData, setAboutData] = useState<any>([])
+  const [projectData, setProjectData] = useState<DataType[]>([])
 
   const getData = async () => {
     try {
       const projectQuery = query(collection(dbService, 'project'))
 
       const querySnapshot = await getDocs(projectQuery)
-      const dataQuery = querySnapshot.docs.map(doc => doc.data())
+      const dataQuery = querySnapshot.docs.map(doc => doc.data() as DataType)
 
-      setAboutData(dataQuery)
+      setProjectData(dataQuery)
     } catch (error) {
       console.error('에러에러에러')
     }
@@ -27,11 +39,11 @@ const Project = () => {
   return (
     <>
       <div className="grid grid-cols-1 gap-4 gap-y-7 md:grid-cols-2">
-        {aboutData.map((data: any, index: number) => (
+        {projectData.map((data, index) => (
           <ProjectArticle key={index} data={data} />
         ))}
       </div>
-      <Button label="Show More" align="center" />
+      <Button label="더 보기" align="center" />
     </>
   )
 }

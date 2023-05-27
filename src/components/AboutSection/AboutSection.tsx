@@ -4,21 +4,31 @@ import profileIMG from '@/assets/profile.png'
 import List from '@/components/UI/List/List'
 import { forwardRef, useEffect, useState } from 'react'
 import { dbService } from '@/firebase-config'
-import { collection, getDocs, query } from 'firebase/firestore'
+import { DocumentData, collection, getDocs, query } from 'firebase/firestore'
 
 interface AboutSectionProps {
   ref?: React.Ref<HTMLDivElement>
 }
 
+interface DataType extends DocumentData {
+  id: number
+  name: string
+  date: string
+  detail: string[]
+  tag?: string
+  stackName?: string
+  [key: string]: any
+}
+
 const AboutSection: React.FC<AboutSectionProps> = forwardRef((_props, ref) => {
-  const [aboutData, setAboutData] = useState<any>([])
+  const [aboutData, setAboutData] = useState<DataType[]>([])
 
   const getData = async () => {
     try {
       const aboutQuery = query(collection(dbService, 'about'))
 
       const querySnapshot = await getDocs(aboutQuery)
-      const dataQuery = querySnapshot.docs.map(doc => doc.data())
+      const dataQuery = querySnapshot.docs.map(doc => doc.data() as DataType)
 
       setAboutData(dataQuery)
     } catch (error) {
