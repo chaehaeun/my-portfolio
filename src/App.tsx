@@ -5,7 +5,7 @@ import MainSection from '@/components/MainSection/MainSection'
 import AboutSection from '@/components/AboutSection/AboutSection'
 import ProjectSection from '@/components/ProjectSection/ProjectSection'
 import ContactSection from '@/components/ContactSection/ContactSection'
-import ToTopBtn from './components/UI/Button/ToTopBtn'
+import ToTopBtn from '@/components/UI/Button/ToTopBtn'
 
 function App() {
   const mainRef = useRef<HTMLDivElement>(null)
