@@ -1,6 +1,5 @@
 import type { Meta } from '@storybook/react'
 import List from '@/components/UI/List/List'
-// import { object } from 'prop-types'
 
 const meta = {
   title: 'List',
@@ -11,6 +10,29 @@ export default meta
 
 export const Default = {
   args: {
-    data: '에네이',
+    objName: 'Exprience',
+    data: {
+      id: 1,
+      name: 'test',
+      date: '2023-05-00',
+      detail: ['test1', 'test2'],
+      tag: null,
+      stackName: null,
+    },
+  },
+}
+
+export const Stack = {
+  args: {
+    objName: 'Skills',
+    data: {
+      id: 1,
+      name: null,
+      date: null,
+      detail: ['test1', 'test2'],
+      tag: 'HTML5',
+      stackName:
+        'https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white',
+    },
   },
 }

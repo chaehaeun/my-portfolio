@@ -1,7 +1,6 @@
-// import { data } from '@/components/AboutSection/AboutSection'
 import { useEffect, useState } from 'react'
 
-export type AboutListData = {
+export interface AboutListData {
   id: number
   name: string
   date: string
