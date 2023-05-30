@@ -7,6 +7,10 @@ interface MainSectionProps {
 }
 
 const MainSection: React.FC<MainSectionProps> = forwardRef((_props, ref) => {
+  const onClick = () => {
+    window.open('', '_blank')
+  }
+
   return (
     <main
       ref={ref}
@@ -34,7 +38,12 @@ const MainSection: React.FC<MainSectionProps> = forwardRef((_props, ref) => {
           있는 개발자가 되겠습니다. 😄
         </span>
       </p>
-      <Button label="RESUME" align="left" />
+      <Button
+        label="RESUME"
+        onClick={onClick}
+        align="left"
+        ariaLabel="이력서페이지로 이동"
+      />
     </main>
   )
 })
