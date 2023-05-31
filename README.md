@@ -57,13 +57,43 @@
 ## 🎨 기능 구현
 ### 1. 다크 모드
 ![다크모드](https://firebasestorage.googleapis.com/v0/b/portfolio-49c62.appspot.com/o/May-28-2023%2022-48-27.gif?alt=media&token=427d2e6c-8eeb-4eb0-ba51-ea8c2cc753c2)
+```tsx
+const [toggle, setToggle] = useState('Dark')
+
+  const toggleDarkMode = () => {
+    if (localStorage.getItem('theme') === 'dark') {
+      localStorage.removeItem('theme')
+      document.documentElement.classList.remove('dark')
+      setToggle('Light')
+    } else {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+      setToggle('Dark')
+    }
+  }
+
+  useEffect(() => {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark')
+      setToggle('Dark')
+    } else {
+      setToggle('Light')
+    }
+  }, [])
+```
 
 ### 2. 반응형 웹
 ![반응형 웹](https://firebasestorage.googleapis.com/v0/b/portfolio-49c62.appspot.com/o/May-28-2023%2022-50-18.gif?alt=media&token=a8605fd3-68da-4786-8a44-a924bb7463eb)
+tailwind css 기능을 사용해 `sm(640px)` `md(768px)` `lg(1024px)` `xl(1280px)` 을 기준으로 브레이크포인트를 잡았다.
 
 ### 3. About / Project 데이터 동적 생성
 ![파이어스토어](https://firebasestorage.googleapis.com/v0/b/portfolio-49c62.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202023-05-28%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.54.40.png?alt=media&token=7c97ebb9-571c-4cbb-833b-05364f91c0d8)
+
+[List.tsx 컴포넌트](https://github.com/chaehaeun/my-portfolio/blob/main/src/components/UI/List/List.tsx) 👉
+[projects.tsx 컴포넌트](https://github.com/chaehaeun/my-portfolio/blob/main/src/components/UI/Project/Project.tsx)👉
+
 컴포넌트 재사용이라는 리액트의 특징을 살리기 위해 firestore에 데이터를 저장한 뒤 동적으로 컴포넌트를 생성. firestore에 데이터 값을 입력해 넣으면 동적으로 데이터가 뿌려지게 된다.
+
 같은 컴포넌트를 사용하면서도 데이터들의 타입에 따라 li 스타일에 차이를 둘 수 있도록 코드를 작성했다.
 
 <br/>
