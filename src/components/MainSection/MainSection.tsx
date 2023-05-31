@@ -8,7 +8,10 @@ interface MainSectionProps {
 
 const MainSection: React.FC<MainSectionProps> = forwardRef((_props, ref) => {
   const onClick = () => {
-    window.open('', '_blank')
+    window.open(
+      'https://gregarious-hibiscus-c7f.notion.site/Frontend-Developer-e010bc2ddced488c8ec0be95ede47639',
+      '_blank',
+    )
   }
 
   return (

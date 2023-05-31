@@ -66,7 +66,7 @@ const Footer = () => {
               </svg>
             </a>
           </li> */}
-          <li>
+          {/* <li>
             <a rel="noopener noreferrer" target="_blank" href="">
               <svg
                 className="w-6 h-6"
@@ -82,9 +82,9 @@ const Footer = () => {
                 />
               </svg>
             </a>
-          </li>
+          </li> */}
           <li>
-            <button type="button">
+            <a href="mailto: chae_3210@naver.com">
               <svg
                 className="w-6 h-6"
                 viewBox="0 0 20 20"
@@ -98,7 +98,7 @@ const Footer = () => {
                   fill="#E0E0E0"
                 />
               </svg>
-            </button>
+            </a>
           </li>
         </ul>
       </div>

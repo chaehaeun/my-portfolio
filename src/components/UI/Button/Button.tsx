@@ -9,8 +9,6 @@ export interface ButtonProps {
   ariaLabel?: string
 }
 
-// const BASE_BUTTON_CLASSES = ''
-
 const Button: React.FC<ButtonProps> = ({
   label,
   onClick,
