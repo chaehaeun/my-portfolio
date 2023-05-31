@@ -31,7 +31,7 @@
 >
 > **제작 기간:** ![project_start](https://img.shields.io/badge/Project%20start-2023--05--23-green) ![project_end](https://img.shields.io/badge/Project%20end-2023--05--28-orange)
 >
-> **배포일:** 
+> **배포일:** 2023.06.01
 >
 > **주요 기능:** 
 > - 다크모드
@@ -43,6 +43,7 @@
 <br/>
 
 ## 🚀 배포 링크
+https://portfolio-49c62.web.app/
 
 ## 🛠 사용 기술 및 도구
 
@@ -51,6 +52,7 @@
 <br/>
 
 ## 🔨 업데이트
+[2023.06.01] 사이트 배포
 
 <br/>
 
