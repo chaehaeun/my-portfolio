@@ -48,7 +48,7 @@ const AboutSection: React.FC<AboutSectionProps> = forwardRef((_props, ref) => {
         <div className="items-start md:flex">
           <img
             src={profileIMG}
-            className="border-2 border-black md:shrink md:mr-5 md:w-48 w-36 lg:w-auto shadow-wrap dark:border-white dark:shadow-wrapDark"
+            className="border-2 border-black md:shrink md:mr-7 md:w-48 w-36 lg:w-auto shadow-wrap dark:border-white dark:shadow-wrapDark"
             alt="포트폴리오 사진"
           />
           <div>
@@ -102,7 +102,7 @@ const AboutSection: React.FC<AboutSectionProps> = forwardRef((_props, ref) => {
             </ul>
           </div>
         </div>
-        <ul className="grid grid-cols-1 mt-10 gap-y-10 lg:gap-5 lg:grid-cols-2 lg:gap-y-14">
+        <ul className="grid grid-cols-1 mt-10 gap-y-10 lg:gap-8 lg:grid-cols-2 lg:gap-y-14">
           <li>
             <Title sectionName="Experience" about={true} />
             <List data={aboutData[1]} objName={'experience'} />

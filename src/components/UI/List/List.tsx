@@ -29,7 +29,7 @@ const List: React.FC<ListProps> = ({ data, objName }) => {
       className={` ${
         listData && listData[0]?.name === null
           ? 'grid lg:grid-cols-2 gap-5 lg:gap-y-7'
-          : 'space-y-5'
+          : 'space-y-8'
       }`}
     >
       {listData &&
