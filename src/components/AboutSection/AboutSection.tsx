@@ -102,7 +102,7 @@ const AboutSection: React.FC<AboutSectionProps> = forwardRef((_props, ref) => {
             </ul>
           </div>
         </div>
-        <ul className="grid grid-cols-1 mt-10 gap-y-10 lg:gap-8 lg:grid-cols-2 lg:gap-y-14">
+        <ul className="grid grid-cols-1 mt-10 gap-y-10 lg:gap-7 lg:grid-cols-2 lg:gap-y-14">
           <li>
             <Title sectionName="Experience" about={true} />
             <List data={aboutData[1]} objName={'experience'} />

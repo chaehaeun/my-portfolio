@@ -20,13 +20,13 @@ const ContactSection: React.FC<ContactSectionProps> = forwardRef(
               <span className="inline-block w-16 mr-2 text-2xl font-medium ">
                 Email
               </span>
-              <span className="inline-block">chae_3210@naver.com</span>
+              <span className="inline-block text-xl">chae_3210@naver.com</span>
             </p>
             <p className="text-left font-solano">
               <span className="inline-block w-16 mr-2 text-2xl font-medium ">
                 Phone
               </span>
-              <span className="inline-block">010-4103-2867</span>
+              <span className="inline-block text-xl">010-4103-2867</span>
             </p>
           </div>
         </Container>
