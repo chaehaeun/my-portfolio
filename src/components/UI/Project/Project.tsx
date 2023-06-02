@@ -25,7 +25,9 @@ const Project = () => {
 
       const querySnapshot = await getDocs(projectQuery)
       const dataQuery = querySnapshot.docs.map(doc => doc.data() as DataType)
-
+      dataQuery.sort((a, b) => {
+        return b.id - a.id
+      })
       setProjectData(dataQuery)
     } catch (error) {
       console.error('에러에러에러')
