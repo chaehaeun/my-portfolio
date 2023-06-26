@@ -96,7 +96,7 @@ const AboutSection: React.FC<AboutSectionProps> = forwardRef((_props, ref) => {
                 능합니다.
               </li>
               <li className="text-sm md:text-base before:block before:mr-3 before:mt-2 before:contents-[''] before:w-1 before:rounded-full before:h-1 dark:before:bg-nightContent before:shrink-0 before:bg-dayContent flex">
-                완성한 코드에서 그치는 것이 아닌 더 나은 디테일을 위해 끊임없이
+                완성한 코드에서 그치는 것이 아닌 더 나은 디테일을 위해
                 고민합니다.
               </li>
             </ul>

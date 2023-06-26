@@ -30,8 +30,7 @@ const MainSection: React.FC<MainSectionProps> = forwardRef((_props, ref) => {
       />
       <p className="text-sm leading-relaxed">
         <span className="sm:block">
-          안녕하세요! 새로운 도전과 배움을 위해 끊임없이 노력하는 신입
-          프론트엔드 개발자 채하은입니다.{' '}
+          안녕하세요! 신입 프론트엔드 개발자 채하은입니다.{' '}
         </span>
         <span>
           <span className="font-semibold text-dayPoint dark:text-nightPoint">
