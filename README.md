@@ -1,7 +1,7 @@
 # 🏖 포트폴리오 사이트 프로젝트
 ![포트폴리오메인](https://firebasestorage.googleapis.com/v0/b/portfolio-49c62.appspot.com/o/May-28-2023%2000-26-51.gif?alt=media&token=884c11e3-969a-40f6-92fc-c18e5ed04c2c)
 
-![피그마시안](https://cdn.discordapp.com/attachments/619875492820025356/1112052052240109608/image.png)
+![피그마시안](https://cdn.discordapp.com/attachments/619875492820025356/1122880073037516880/image.png)
 
 개인 포트폴리오 웹 구현 프로젝트입니다.
 
