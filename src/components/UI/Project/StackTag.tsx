@@ -51,12 +51,12 @@ const StackTag: React.FC<StackProps> = ({ stack }) => {
     'Next.js':
       'https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white',
     'CSS Modules':
-      'https://img.shields.io/badge/CSS_Modules-1572B6?style=flat-square&logo=css3&logoColor=white',
+      'https://img.shields.io/badge/CSS_Modules-000000?style=flat-square&logo=cssmodules&logoColor=white',
     'Styled-Components':
       'https://img.shields.io/badge/Styled_Components-DB7093?style=flat-square&logo=styled-components&logoColor=white',
     Sass: 'https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white',
     Recoil:
-      'https://img.shields.io/badge/Recoil-61DAFB?style=flat-square&logo=recoil&logoColor=white',
+      'https://img.shields.io/badge/Recoil-3578E5?style=flat-square&logo=recoil&logoColor=white',
   }
 
   return <img src={STACKS[stack]} alt={stack} />
