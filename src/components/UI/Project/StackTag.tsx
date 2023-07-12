@@ -14,6 +14,10 @@ type Stack =
   | 'Vite'
   | 'Figma'
   | 'Next.js'
+  | 'CSS Modules'
+  | 'Styled-Components'
+  | 'Sass'
+  | 'Recoil'
   | string
 
 interface StackProps {
@@ -46,6 +50,13 @@ const StackTag: React.FC<StackProps> = ({ stack }) => {
       'https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white',
     'Next.js':
       'https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white',
+    'CSS Modules':
+      'https://img.shields.io/badge/CSS_Modules-1572B6?style=flat-square&logo=css3&logoColor=white',
+    'Styled-Components':
+      'https://img.shields.io/badge/Styled_Components-DB7093?style=flat-square&logo=styled-components&logoColor=white',
+    Sass: 'https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white',
+    Recoil:
+      'https://img.shields.io/badge/Recoil-61DAFB?style=flat-square&logo=recoil&logoColor=white',
   }
 
   return <img src={STACKS[stack]} alt={stack} />
