@@ -18,6 +18,7 @@ type Stack =
   | 'Styled-Components'
   | 'Sass'
   | 'Recoil'
+  | 'TanStack Query'
   | string
 
 interface StackProps {
@@ -57,6 +58,8 @@ const StackTag: React.FC<StackProps> = ({ stack }) => {
     Sass: 'https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white',
     Recoil:
       'https://img.shields.io/badge/Recoil-3578E5?style=flat-square&logo=recoil&logoColor=white',
+    'TanStack Query':
+      'https://img.shields.io/badge/TanStack_Query-FF4154?style=flat-square&logo=react-query&logoColor=white',
   }
 
   return <img src={STACKS[stack]} alt={stack} />
