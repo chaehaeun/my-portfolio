@@ -8,7 +8,7 @@ const ProjectTypeTag: React.FC<ProjectTypeTagProps> = ({ type }) => {
   switch (type) {
     case '개인 프로젝트':
       return (
-        <span className="px-2 py-1 text-xs text-white bg-blue-500 rounded-full">
+        <span className="px-2 py-1 text-xs text-white bg-blue-700 rounded-full">
           개인 프로젝트
         </span>
       )
@@ -20,7 +20,7 @@ const ProjectTypeTag: React.FC<ProjectTypeTagProps> = ({ type }) => {
       )
     case '클론':
       return (
-        <span className="px-2 py-1 text-xs text-white bg-teal-400 rounded-full">
+        <span className="px-2 py-1 text-xs text-white rounded-full bg-rose-600">
           클론
         </span>
       )
