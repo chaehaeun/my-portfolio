@@ -55,6 +55,7 @@ https://portfolio-49c62.web.app/
 - [2023.06.01] 사이트 배포
 
 - [2023.07.21] 접근성 향상 (태그 명암비 수정)
+
 ![접근성향상](https://cdn.discordapp.com/attachments/619875492820025356/1131943804832858132/image.png)
 
 <br/>
