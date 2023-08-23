@@ -16,6 +16,7 @@
 - [🔨 업데이트](#-업데이트)
 - [🎨 기능 구현](#-기능-구현)
 - [🩹 트러블슈팅](#-트러블슈팅)
+- [🎨 성능 개선 작업](#-성능-개선-작업)
 - [💡 추후 업데이트 할(원하는) 기능](#-추후-업데이트-할원하는-기능)
 
 <br/>
@@ -53,6 +54,7 @@ https://portfolio-49c62.web.app/
 
 ## 🔨 업데이트
 [2023.06.01] 사이트 배포
+[2023.08.23] 사이트 성능 개선
 
 <br/>
 
@@ -148,6 +150,45 @@ const dataQuery = querySnapshot.docs.map(doc => doc.data() as DataType)
 또, dataQuery에서 doc.data()를 as DataType로 형변환하여 타입을 맞추어 data prop으로 사용되는 데이터의 타입을 DataType로 일치시켰다.
 
 </details>
+
+<br/>
+
+## ⚡️ 성능 개선 작업
+![개선 전](https://cdn.discordapp.com/attachments/619875492820025356/1143738820387405884/image.png)
+
+성능 개선 전
+
+![개선 후](https://cdn.discordapp.com/attachments/619875492820025356/1143749728241188894/image.png)
+
+Vite는 프로덕션 빌드를 위해 기본적으로 특정 형태의 번들링을 하지 않기 때문에 별도로 이미지 최적화와 텍스트 압축을 통해 성능 개선 작업이 필요함을 깨달았다.
+
+### 텍스트 압축 / 이미지 최적화
+
+```ts
+  plugins: [
+    //...
+    compression(),
+    viteImagemin({
+      plugins: {
+        jpg: imageminMozjpeg(),
+        png: imageminPngQuant(),
+        gif: imageminGifSicle(),
+        svg: imageminSvgo(),
+      },
+      makeWebp: {
+        plugins: {
+          jpg: imageminWebp(),
+          png: imageminWebp(),
+        },
+      },
+    }),
+  ],
+```
+- `vite-plugin-compression2` : Gzip 및 Brotli 압축 알고리즘을 지원하는 Vite 플러그인
+- `viteImagemin` : 이미지 최적화 플러그인
+
+이 두 플러그인을 사용해 텍스트 압축과 이미지 최적화를 진행했다.
+
 
 <br/>
 
