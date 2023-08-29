@@ -53,8 +53,11 @@ https://portfolio-49c62.web.app/
 <br/>
 
 ## 🔨 업데이트
-[2023.06.01] 사이트 배포
-[2023.08.23] 사이트 성능 개선
+- [2023.06.01] 사이트 배포
+
+- [2023.07.21] 접근성 향상 (태그 명암비 수정)
+
+- [2023.08.23] 사이트 성능/seo 개선
 
 <br/>
 
@@ -158,7 +161,7 @@ const dataQuery = querySnapshot.docs.map(doc => doc.data() as DataType)
 
 성능 개선 전
 
-![개선 후](https://cdn.discordapp.com/attachments/619875492820025356/1143749728241188894/image.png)
+![개선 후](https://cdn.discordapp.com/attachments/619875492820025356/1143878503251591370/image.png)
 
 Vite는 프로덕션 빌드를 위해 기본적으로 특정 형태의 번들링을 하지 않기 때문에 별도로 이미지 최적화와 텍스트 압축을 통해 성능 개선 작업이 필요함을 깨달았다.
 
