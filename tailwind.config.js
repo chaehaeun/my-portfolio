@@ -34,6 +34,7 @@ export default {
         dayPointHover: '#2C087B',
         nightPoint: '#64FFDA',
         nightPointHover: '#5BD2B6',
+        modalBackDrop: 'rgba(0, 0, 0, 0.5)',
       },
       boxShadow: {
         wrap: '4px 4px #000',
