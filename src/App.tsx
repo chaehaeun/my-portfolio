@@ -1,46 +1,51 @@
-import { useRef } from 'react'
-import Header from '@/components/Header/Header'
-import Footer from '@/components/Footer/Footer'
-import MainSection from '@/components/MainSection/MainSection'
 import AboutSection from '@/components/AboutSection/AboutSection'
-import ProjectSection from '@/components/ProjectSection/ProjectSection'
 import ContactSection from '@/components/ContactSection/ContactSection'
+import Footer from '@/components/Footer/Footer'
+import Header from '@/components/Header/Header'
+import MainSection from '@/components/MainSection/MainSection'
+import ProjectSection from '@/components/ProjectSection/ProjectSection'
 import ToTopBtn from '@/components/UI/Button/ToTopBtn'
+import { useCallback, useRef } from 'react'
+
+interface RefsMap {
+  main: React.RefObject<HTMLDivElement>
+  about: React.RefObject<HTMLDivElement>
+  project: React.RefObject<HTMLDivElement>
+  contact: React.RefObject<HTMLDivElement>
+}
+
+type SectionKey = keyof RefsMap
 
 function App() {
-  const mainRef = useRef<HTMLDivElement>(null)
-  const aboutRef = useRef<HTMLDivElement>(null)
-  const projectRef = useRef<HTMLDivElement>(null)
-  const contactRef = useRef<HTMLDivElement>(null)
+  const refs = {
+    main: useRef<HTMLDivElement>(null),
+    about: useRef<HTMLDivElement>(null),
+    project: useRef<HTMLDivElement>(null),
+    contact: useRef<HTMLDivElement>(null),
+  }
 
-  const scrollToMain = () => {
-    mainRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }
-  const scrollToAbout = () => {
-    aboutRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }
-  const scrollToProject = () => {
-    projectRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }
-  const scrollToContact = () => {
-    contactRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }
+  const scrollTo = useCallback(
+    (section: SectionKey) => {
+      refs[section].current?.scrollIntoView({ behavior: 'smooth' })
+    },
+    [refs],
+  )
 
   const clickHandler = {
-    scrollToMain,
-    scrollToAbout,
-    scrollToProject,
-    scrollToContact,
+    scrollToMain: () => scrollTo('main'),
+    scrollToAbout: () => scrollTo('about'),
+    scrollToProject: () => scrollTo('project'),
+    scrollToContact: () => scrollTo('contact'),
   }
 
   return (
     <>
       <Header clickHandler={clickHandler} />
-      <ToTopBtn scrollToTop={scrollToMain} />
-      <MainSection ref={mainRef} />
-      <AboutSection ref={aboutRef} />
-      <ProjectSection ref={projectRef} />
-      <ContactSection ref={contactRef} />
+      <ToTopBtn scrollToTop={clickHandler.scrollToMain} />
+      <MainSection ref={refs.main} />
+      <AboutSection ref={refs.about} />
+      <ProjectSection ref={refs.project} />
+      <ContactSection ref={refs.contact} />
       <Footer />
     </>
   )
