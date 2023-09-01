@@ -1,4 +1,3 @@
-import React from 'react'
 import StackTag from '@/components/UI/Project/StackTag'
 import ProjectTypeTag from './ProjectTypeTag'
 
@@ -18,7 +17,7 @@ interface ProjectProps {
   data: DataType
 }
 
-const ProjectArticle: React.FC<ProjectProps> = ({ data }) => {
+const ProjectArticle = ({ data }: ProjectProps) => {
   return (
     <article className="flex flex-col mx-auto transition-transform border-2 border-black sm:max-w-[85%] w-full md:max-w-full shadow-wrap dark:border-white dark:shadow-wrapDark dark:bg-slate-800 hover:scale-[1.01]">
       <div>

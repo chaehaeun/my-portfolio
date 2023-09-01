@@ -10,7 +10,7 @@ interface HeaderProps {
   }
 }
 
-const Header: React.FC<HeaderProps> = ({ clickHandler }) => {
+const Header = ({ clickHandler }: HeaderProps) => {
   const [toggleMenu, setToggleMenu] = useState(false)
 
   return (

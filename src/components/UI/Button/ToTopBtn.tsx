@@ -1,10 +1,8 @@
-import React from 'react'
-
 interface ToTopBtnProps {
   scrollToTop: () => void
 }
 
-const ToTopBtn: React.FC<ToTopBtnProps> = ({ scrollToTop }) => {
+const ToTopBtn = ({ scrollToTop }: ToTopBtnProps) => {
   return (
     <div className="top-0 pointer-events-none md:-translate-x-1/2 md:fixed md:left-1/2 md:max-w-7xl md:w-full md:h-full">
       <button

@@ -1,12 +1,8 @@
-import React, { forwardRef } from 'react'
 import Button from '@/components/UI/Button/Button'
+import { forwardRef } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 
-interface MainSectionProps {
-  ref?: React.Ref<HTMLDivElement>
-}
-
-const MainSection: React.FC<MainSectionProps> = forwardRef((_props, ref) => {
+const MainSection = forwardRef<HTMLDivElement, {}>((_props, ref) => {
   const onClick = () => {
     window.open(
       'https://gregarious-hibiscus-c7f.notion.site/Frontend-Developer-e010bc2ddced488c8ec0be95ede47639',

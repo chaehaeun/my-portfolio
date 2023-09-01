@@ -15,7 +15,7 @@ interface ListProps {
   objName: string
 }
 
-const List: React.FC<ListProps> = ({ data, objName }) => {
+const List = ({ data, objName }: ListProps) => {
   const [listData, setListData] = useState<AboutListData[] | null>(null)
 
   useEffect(() => {

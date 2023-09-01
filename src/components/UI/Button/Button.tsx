@@ -1,5 +1,3 @@
-import React from 'react'
-
 type alignType = 'left' | 'center'
 
 export interface ButtonProps {
@@ -9,12 +7,7 @@ export interface ButtonProps {
   ariaLabel?: string
 }
 
-const Button: React.FC<ButtonProps> = ({
-  label,
-  onClick,
-  align = 'left',
-  ariaLabel,
-}) => {
+const Button = ({ label, onClick, align = 'left', ariaLabel }: ButtonProps) => {
   return (
     <button
       onClick={onClick}

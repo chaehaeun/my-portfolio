@@ -1,5 +1,3 @@
-import React from 'react'
-
 type Stack =
   | 'HTML5'
   | 'CSS3'
@@ -25,7 +23,7 @@ interface StackProps {
   stack: Stack
 }
 
-const StackTag: React.FC<StackProps> = ({ stack }) => {
+const StackTag = ({ stack }: StackProps) => {
   const STACKS: { [key in Stack]: string } = {
     HTML5:
       'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white',

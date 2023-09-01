@@ -1,19 +1,15 @@
-import Container from '@/components/UI/Container/Container'
-import Title from '@/components/UI/Title/Title'
-import profileIMG from '@/assets/profile.png'
-import List from '@/components/UI/List/List'
-import { forwardRef, useEffect, useState } from 'react'
-import { AboutDataType } from '@/api/type'
-import { TypeAnimation } from 'react-type-animation'
 import { getAboutData } from '@/api/firebaseApis'
-import useModal from '@/hooks/useModal'
+import { AboutDataType } from '@/api/type'
+import profileIMG from '@/assets/profile.png'
+import Container from '@/components/UI/Container/Container'
+import List from '@/components/UI/List/List'
 import Modal from '@/components/UI/Modal/Modal'
+import Title from '@/components/UI/Title/Title'
+import useModal from '@/hooks/useModal'
+import { forwardRef, useEffect, useState } from 'react'
+import { TypeAnimation } from 'react-type-animation'
 
-interface AboutSectionProps {
-  ref?: React.Ref<HTMLDivElement>
-}
-
-const AboutSection: React.FC<AboutSectionProps> = forwardRef((_props, ref) => {
+const AboutSection = forwardRef<HTMLDivElement, {}>((_props, ref) => {
   const [aboutData, setAboutData] = useState<AboutDataType[]>([])
   const { showModal, openModal, closeModal, content } = useModal()
 

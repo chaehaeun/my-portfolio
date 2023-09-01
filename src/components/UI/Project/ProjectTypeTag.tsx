@@ -1,10 +1,8 @@
-import React from 'react'
-
 interface ProjectTypeTagProps {
   type: string
 }
 
-const ProjectTypeTag: React.FC<ProjectTypeTagProps> = ({ type }) => {
+const ProjectTypeTag = ({ type }: ProjectTypeTagProps) => {
   switch (type) {
     case '개인 프로젝트':
       return (
