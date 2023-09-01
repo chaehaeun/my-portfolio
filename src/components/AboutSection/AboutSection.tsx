@@ -3,41 +3,30 @@ import Title from '@/components/UI/Title/Title'
 import profileIMG from '@/assets/profile.png'
 import List from '@/components/UI/List/List'
 import { forwardRef, useEffect, useState } from 'react'
-import { dbService } from '@/firebase-config'
-import { DocumentData, collection, getDocs, query } from 'firebase/firestore'
+import { AboutDataType } from '@/api/type'
 import { TypeAnimation } from 'react-type-animation'
+import { getAboutData } from '@/api/firebaseApis'
+import useModal from '@/hooks/useModal'
+import Modal from '@/components/UI/Modal/Modal'
 
 interface AboutSectionProps {
   ref?: React.Ref<HTMLDivElement>
 }
 
-interface DataType extends DocumentData {
-  id: number
-  name: string
-  date: string
-  detail: string[]
-  tag?: string
-  stackName?: string
-  [key: string]: any
-}
-
 const AboutSection: React.FC<AboutSectionProps> = forwardRef((_props, ref) => {
-  const [aboutData, setAboutData] = useState<DataType[]>([])
-
-  const getData = async () => {
-    try {
-      const aboutQuery = query(collection(dbService, 'about'))
-
-      const querySnapshot = await getDocs(aboutQuery)
-      const dataQuery = querySnapshot.docs.map(doc => doc.data() as DataType)
-
-      setAboutData(dataQuery)
-    } catch (error) {
-      console.error('에러에러에러')
-    }
-  }
+  const [aboutData, setAboutData] = useState<AboutDataType[]>([])
+  const { showModal, openModal, closeModal, content } = useModal()
 
   useEffect(() => {
+    const getData = async () => {
+      try {
+        const dataQuery = await getAboutData()
+        setAboutData(dataQuery)
+      } catch (error) {
+        openModal('데이터를 불러오는데 실패했습니다.')
+      }
+    }
+
     getData()
   }, [])
 
@@ -121,6 +110,7 @@ const AboutSection: React.FC<AboutSectionProps> = forwardRef((_props, ref) => {
           </li>
         </ul>
       </Container>
+      {showModal && <Modal onClose={closeModal}>{content}</Modal>}
     </div>
   )
 })
