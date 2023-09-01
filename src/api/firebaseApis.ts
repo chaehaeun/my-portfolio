@@ -1,6 +1,14 @@
 import { AboutDataType, ProjectDataType } from '@/api/type'
 import { dbService } from '@/firebase-config'
-import { collection, getDocs, query } from 'firebase/firestore'
+import {
+  DocumentData,
+  QueryDocumentSnapshot,
+  collection,
+  getDocs,
+  limit,
+  query,
+  startAfter,
+} from 'firebase/firestore'
 
 export const getAboutData = async () => {
   const aboutQuery = query(collection(dbService, 'about'))
@@ -11,14 +19,29 @@ export const getAboutData = async () => {
   return dataQuery
 }
 
-export const getProjectData = async () => {
-  const projectQuery = query(collection(dbService, 'project'))
+export const getProjectData = async (
+  itemsPerPage: number,
+  lastDoc: QueryDocumentSnapshot<DocumentData> | null,
+) => {
+  const projectQuery = query(
+    collection(dbService, 'project'),
+    ...(lastDoc ? [startAfter(lastDoc)] : []),
+    limit(itemsPerPage),
+  )
 
   const querySnapshot = await getDocs(projectQuery)
+
+  const lastDocument = querySnapshot.docs.length
+    ? querySnapshot.docs[querySnapshot.docs.length - 1]
+    : null
+
   const dataQuery = querySnapshot.docs.map(doc => doc.data() as ProjectDataType)
   dataQuery.sort((a, b) => {
     return b.id - a.id
   })
 
-  return dataQuery
+  return {
+    data: dataQuery, // 예: 데이터 변환 및 정렬 결과
+    lastDocument,
+  }
 }
