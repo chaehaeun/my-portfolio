@@ -17,6 +17,9 @@ type Stack =
   | 'Sass'
   | 'Recoil'
   | 'TanStack Query'
+  | 'Axios'
+  | 'ESlint'
+  | 'Prettier'
   | string
 
 interface StackProps {
@@ -24,6 +27,7 @@ interface StackProps {
 }
 
 const StackTag = ({ stack }: StackProps) => {
+  const DEFAULT_IMAGE_URL = `https://img.shields.io/badge/${stack}-1C1C1C?style=flat-square&logo=${stack}&logoColor=white`
   const STACKS: { [key in Stack]: string } = {
     HTML5:
       'https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white',
@@ -58,9 +62,17 @@ const StackTag = ({ stack }: StackProps) => {
       'https://img.shields.io/badge/Recoil-3578E5?style=flat-square&logo=recoil&logoColor=white',
     'TanStack Query':
       'https://img.shields.io/badge/TanStack_Query-FF4154?style=flat-square&logo=react-query&logoColor=white',
+    Axios:
+      'https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white',
+    ESlint:
+      'https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white',
+    Prettier:
+      'https://img.shields.io/badge/Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=white',
   }
 
-  return <img src={STACKS[stack]} alt={stack} />
+  const imageUrl = STACKS[stack] || DEFAULT_IMAGE_URL
+
+  return <img src={imageUrl} alt={stack} />
 }
 
 export default StackTag
