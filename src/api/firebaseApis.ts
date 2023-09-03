@@ -6,6 +6,7 @@ import {
   collection,
   getDocs,
   limit,
+  orderBy,
   query,
   startAfter,
 } from 'firebase/firestore'
@@ -25,6 +26,7 @@ export const getProjectData = async (
 ) => {
   const projectQuery = query(
     collection(dbService, 'project'),
+    orderBy('id', 'desc'),
     ...(lastDoc ? [startAfter(lastDoc)] : []),
     limit(itemsPerPage),
   )
@@ -36,9 +38,6 @@ export const getProjectData = async (
     : null
 
   const dataQuery = querySnapshot.docs.map(doc => doc.data() as ProjectDataType)
-  dataQuery.sort((a, b) => {
-    return b.id - a.id
-  })
 
   return {
     data: dataQuery,
