@@ -15,7 +15,7 @@ const ContactSection = forwardRef<HTMLDivElement, {}>((_props, ref) => {
             <span className="inline-block w-16 mr-2 text-2xl font-medium ">
               Email
             </span>
-            <span className="inline-block text-xl">chae_3210@naver.com</span>
+            <span className="inline-block text-xl">uchi0321@naver.com</span>
           </p>
           <p className="text-left font-solano">
             <span className="inline-block w-16 mr-2 text-2xl font-medium ">

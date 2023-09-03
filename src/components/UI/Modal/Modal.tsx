@@ -38,7 +38,6 @@ const ModalOverlay = ({ children, onClose }: ModalOverlayProps) => {
   )
 }
 
-// 모달을 렌더링하기 위한 포털 요소
 const portalElement: HTMLElement | null = document.getElementById('overlays')
 
 const Modal = ({ onClose, children }: ModalProps) => {

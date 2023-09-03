@@ -26,7 +26,6 @@ const Project = () => {
     }
   }
 
-  // TODO : 모달 상태를 recoil로 중앙에서 관리하도록 변경
   useEffect(() => {
     loadMoreData()
   }, [])
