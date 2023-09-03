@@ -1,4 +1,4 @@
-import { DocumentData } from 'firebase/firestore'
+import { DocumentData, QueryDocumentSnapshot } from 'firebase/firestore'
 
 export interface AboutDataType extends DocumentData {
   id: number
@@ -21,3 +21,5 @@ export interface ProjectDataType extends DocumentData {
   imgURL: string
   deploy?: string
 }
+
+export type LastDoc = QueryDocumentSnapshot<DocumentData> | null

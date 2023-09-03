@@ -1,5 +1,5 @@
+import { ToggleButton } from '@/components'
 import { useState } from 'react'
-import ToggleButton from '../UI/Button/ToggleButton'
 
 interface HeaderProps {
   clickHandler: {

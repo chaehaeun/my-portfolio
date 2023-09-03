@@ -1,4 +1,4 @@
-import { AboutDataType, ProjectDataType } from '@/api/type'
+import { AboutDataType, ProjectDataType } from '@/api'
 import { dbService } from '@/firebase-config'
 import {
   DocumentData,
@@ -41,7 +41,7 @@ export const getProjectData = async (
   })
 
   return {
-    data: dataQuery, // 예: 데이터 변환 및 정렬 결과
+    data: dataQuery,
     lastDocument,
   }
 }

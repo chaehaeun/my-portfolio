@@ -1,10 +1,12 @@
-import AboutSection from '@/components/AboutSection/AboutSection'
-import ContactSection from '@/components/ContactSection/ContactSection'
-import Footer from '@/components/Footer/Footer'
-import Header from '@/components/Header/Header'
-import MainSection from '@/components/MainSection/MainSection'
-import ProjectSection from '@/components/ProjectSection/ProjectSection'
-import ToTopBtn from '@/components/UI/Button/ToTopBtn'
+import {
+  AboutSection,
+  ContactSection,
+  Footer,
+  Header,
+  MainSection,
+  ProjectSection,
+  ToTopBtn,
+} from '@/components'
 import { useCallback, useRef } from 'react'
 
 interface RefsMap {

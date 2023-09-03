@@ -1,4 +1,4 @@
-import Button from '@/components/UI/Button/Button'
+import { Button } from '@/components'
 import { forwardRef } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 

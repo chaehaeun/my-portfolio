@@ -1,5 +1,4 @@
-import StackTag from '@/components/UI/Project/StackTag'
-import ProjectTypeTag from './ProjectTypeTag'
+import { ProjectTypeTag, StackTag } from '@/components'
 
 interface DataType {
   projects: string

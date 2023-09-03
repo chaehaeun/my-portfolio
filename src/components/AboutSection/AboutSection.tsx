@@ -1,10 +1,6 @@
-import { getAboutData } from '@/api/firebaseApis'
-import { AboutDataType } from '@/api/type'
+import { AboutDataType, getAboutData } from '@/api'
 import profileIMG from '@/assets/profile.png'
-import Container from '@/components/UI/Container/Container'
-import List from '@/components/UI/List/List'
-import Modal from '@/components/UI/Modal/Modal'
-import Title from '@/components/UI/Title/Title'
+import { Container, List, Modal, Title } from '@/components'
 import useModal from '@/hooks/useModal'
 import { forwardRef, useEffect, useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
@@ -46,7 +42,7 @@ const AboutSection = forwardRef<HTMLDivElement, {}>((_props, ref) => {
                 sequence={[
                   '새로운 것을 익히는 것을 좋아하는',
                   1000,
-                  '웹 접근성을 준수하는',
+                  '웹 표준을 준수하는',
                   1000,
                   '재사용하기 쉬운 코드를 짜기 위해 노력하는',
                   1000,

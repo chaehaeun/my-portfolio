@@ -1,4 +1,4 @@
-import Container from '@/components/UI/Container/Container'
+import { Container } from '@/components'
 import { forwardRef } from 'react'
 
 const ContactSection = forwardRef<HTMLDivElement, {}>((_props, ref) => {

@@ -1,6 +1,4 @@
-import Container from '@/components/UI/Container/Container'
-import Project from '@/components/UI/Project/Project'
-import Title from '@/components/UI/Title/Title'
+import { Container, Project, Title } from '@/components'
 import { forwardRef } from 'react'
 
 const ProjectSection = forwardRef<HTMLDivElement, {}>((_props, ref) => {

@@ -1,19 +1,13 @@
-import Modal from '@/components/UI/Modal/Modal'
-import ProjectArticle from '@/components/UI/Project/ProjectArticle'
-import { useCallback, useEffect, useState } from 'react'
-// import Button from '@/components/UI/Button/Button'
-import { getProjectData } from '@/api/firebaseApis'
-import { ProjectDataType } from '@/api/type'
-import Button from '@/components/UI/Button/Button'
+import { LastDoc, ProjectDataType, getProjectData } from '@/api'
+import { Button, Modal, ProjectArticle } from '@/components'
 import useModal from '@/hooks/useModal'
-import { DocumentData, QueryDocumentSnapshot } from 'firebase/firestore'
+import { useCallback, useEffect, useState } from 'react'
 
 const ITEMS_PER_PAGE = 4
 
 const Project = () => {
   const [projectData, setProjectData] = useState<ProjectDataType[]>([])
-  const [lastDoc, setLastDoc] =
-    useState<QueryDocumentSnapshot<DocumentData> | null>(null)
+  const [lastDoc, setLastDoc] = useState<LastDoc>(null)
   const [hasMoreData, setHasMoreData] = useState<boolean>(true)
   const { showModal, openModal, closeModal, content } = useModal()
 
@@ -38,7 +32,7 @@ const Project = () => {
   }, [])
 
   const loadNextData = () => {
-    loadMoreData() // 데이터를 더 불러옵니다.
+    loadMoreData()
   }
 
   return (
