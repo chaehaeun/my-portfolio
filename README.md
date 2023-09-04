@@ -38,6 +38,7 @@
 > - 다크모드
 > - 반응형 웹
 > - About / Project 데이터 동적 생성
+> - 프로젝트 더보기 기능
 > <br/>
 >
 
@@ -106,6 +107,56 @@ tailwind css 기능을 사용해 `sm(640px)` `md(768px)` `lg(1024px)` `xl(1280px
 컴포넌트 재사용이라는 리액트의 특징을 살리기 위해 firestore에 데이터를 저장한 뒤 동적으로 컴포넌트를 생성. firestore에 데이터 값을 입력해 넣으면 동적으로 데이터가 뿌려지게 된다.
 
 같은 컴포넌트를 사용하면서도 데이터들의 타입에 따라 li 스타일에 차이를 둘 수 있도록 코드를 작성했다.
+
+### 4. 프로젝트 더보기 기능
+
+```tsx
+export const getProjectData = async (
+  itemsPerPage: number,
+  lastDoc: QueryDocumentSnapshot<DocumentData> | null,
+) => {
+  const projectQuery = query(
+    collection(dbService, 'project'),
+    orderBy('id', 'desc'),
+    ...(lastDoc ? [startAfter(lastDoc)] : []),
+    limit(itemsPerPage),
+  )
+
+  const querySnapshot = await getDocs(projectQuery)
+
+  const lastDocument = querySnapshot.docs.length
+    ? querySnapshot.docs[querySnapshot.docs.length - 1]
+    : null
+
+  const dataQuery = querySnapshot.docs.map(doc => doc.data() as ProjectDataType)
+
+  return {
+    data: dataQuery,
+    lastDocument,
+  }
+}
+
+/// 
+
+  const [lastDoc, setLastDoc] = useState<LastDoc>(null)
+  const [hasMoreData, setHasMoreData] = useState<boolean>(true)
+
+  const loadMoreData = async () => {
+    try {
+      if (!hasMoreData) return
+      const result = await getProjectData(ITEMS_PER_PAGE, lastDoc)
+
+      if (result.data.length < ITEMS_PER_PAGE) {
+        setHasMoreData(false)
+      }
+      setProjectData(prevData => [...prevData, ...result.data])
+      setLastDoc(result.lastDocument)
+    } catch (error) {
+      openModal('데이터를 불러오는데 실패했습니다.')
+    }
+  }
+```
+한 번에 몇 개의 데이터를 보여줄지를 정하는 `ITEMS_PER_PAGE`와 불러온 데이터의 마지막 데이터를 의미하는 `lastDoc`를 인자로 받아 `getProjectData` 함수를 호출하고, 만약 불러온 데이터의 개수가 `ITEMS_PER_PAGE`보다 작다면 `hasMoreData`를 false로 변경해 더 이상 데이터를 불러오지 않도록 설정했다. 그리고 `hasMoreData`가 true일 때만 `loadMoreData` 함수를 호출하도록 설정했다.
 
 <br/>
 
